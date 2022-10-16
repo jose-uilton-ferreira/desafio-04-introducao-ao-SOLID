@@ -12,11 +12,11 @@ class ListAllUsersUseCase {
     const loggedInUser = this.usersRepository.findById(user_id);
 
     if (!loggedInUser) {
-      throw new Error("Logged in user does not exist");
+      throw new Error("Logged in user does not exist!");
     }
 
     if (!loggedInUser.admin) {
-      throw new Error("Logged in user is not admin");
+      throw new Error("Logged in user is not admin!");
     }
 
     const allUsers = this.usersRepository.list();
